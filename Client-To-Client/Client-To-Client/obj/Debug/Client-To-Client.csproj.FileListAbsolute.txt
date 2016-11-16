@@ -1,1 +1,13 @@
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\bin\Debug\Client-To-Client.exe
 C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\bin\Debug\Client-To-Client.exe.config
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\MainWindow.g.cs
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\App.g.cs
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client-To-Client_MarkupCompile.cache
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client-To-Client_MarkupCompile.lref
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\MainWindow.baml
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client-To-Client.g.resources
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client_To_Client.Properties.Resources.resources
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client-To-Client.csproj.GenerateResource.Cache
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client-To-Client.exe
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client-To-Client.pdb
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\bin\Debug\Client-To-Client.pdb
