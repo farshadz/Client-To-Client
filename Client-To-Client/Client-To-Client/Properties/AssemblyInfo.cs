@@ -8,7 +8,8 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Client-To-Client")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("I am studying Master of Automotive Software Engineering at TU Chemnitz. I"
+           + "have developed and published this project for learning and education purpose only.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Client-To-Client")]
