@@ -59,15 +59,5 @@ namespace Client_To_Client.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IMG_5388 {
-            get {
-                object obj = ResourceManager.GetObject("IMG_5388", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
