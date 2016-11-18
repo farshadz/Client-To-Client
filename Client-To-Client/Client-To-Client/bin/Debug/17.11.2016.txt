@@ -1,0 +1,10 @@
+Time: 17.11.2016 09:32:24 
+-----------------------------------------------------------
+Message: No connection could be made because the target machine actively refused it 127.0.0.1:13000
+StackTrace:    at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Client_To_Client.MainWindow.esSenderConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 62
+Source: System
+TargetSite: Void DoConnect(System.Net.EndPoint, System.Net.SocketAddress)
+-----------------------------------------------------------
+

@@ -26,7 +26,7 @@ namespace Client_To_Client
         //Declaring socket connections 
         Socket socketSender = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         Socket socketReciever = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
+        General gen = new General();
         public MainWindow()
         {
             InitializeComponent();
@@ -67,8 +67,10 @@ namespace Client_To_Client
             catch (Exception ex)
             {
                 //Updating the statuses and creating error log in case of error
+                gen.creatErrorLog(ex);
                 btnSendCon.Dispatcher.BeginInvoke((Action)(() => btnSendCon.Background = Brushes.Red));
                 lblConnectStatus.Dispatcher.BeginInvoke((Action)(() => lblConnectStatus.Content = "Failed to connect. Check error log."));
+                
             }
         }
 
@@ -84,7 +86,7 @@ namespace Client_To_Client
             }
             catch (Exception ex)
             {
-
+                gen.creatErrorLog(ex);
                 btnSendCon.Dispatcher.BeginInvoke((Action)(() => btnSendCon.Background = Brushes.Red));
                 lblConnectStatus.Dispatcher.BeginInvoke((Action)(() => lblConnectStatus.Content = "Failed to send data. Check error log."));
             }
@@ -112,6 +114,7 @@ namespace Client_To_Client
         {
             try
             {
+
                 //Getting the ip and port from another thread within associated UI Elements
                 String ipAdd = "";
 
@@ -144,7 +147,7 @@ namespace Client_To_Client
             }
             catch (Exception ex)
             {
-
+                gen.creatErrorLog(ex);
                 btnRecieveCon.Dispatcher.BeginInvoke((Action)(() => btnRecieveCon.Background = Brushes.Red));
                 lblRecieverStatus.Dispatcher.BeginInvoke((Action)(() => lblRecieverStatus.Content = "Failed to establish reciever connection. Check the error log"));
             }
@@ -173,6 +176,7 @@ namespace Client_To_Client
             }
             catch (Exception ex)
             {
+                gen.creatErrorLog(ex);
                 btnRecieveCon.Dispatcher.BeginInvoke((Action)(() => btnRecieveCon.Background = Brushes.Red));
                 lblRecieverStatus.Dispatcher.BeginInvoke((Action)(() => lblRecieverStatus.Content = "Failed to recieve data. Check error log .... "));
             }
