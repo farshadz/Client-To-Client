@@ -23,16 +23,6 @@
                     <MenuItem Header="_Close"/>
                 </MenuItem>
             </Menu>
-            <GroupBox x:Name="grpSendTo" Header="Send To" DockPanel.Dock="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="940" Margin="0,1,0,0">
-                <Grid HorizontalAlignment="Left" Height="45" Margin="10,0,-2,0" VerticalAlignment="Top" Width="920">
-                    <Label x:Name="lblIpAddressTo" Content="IP Address" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="lblPortTo" Content="Port Nr" HorizontalAlignment="Left" Margin="287,8,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtIpAddressTo" HorizontalAlignment="Left" Height="23" Margin="81,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="127.0.0.1"/>
-                    <TextBox x:Name="txtPortNrTo" HorizontalAlignment="Left" Height="23" Margin="340,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="13000"/>
-                    <Button x:Name="btnSendCon" Content="Connect" HorizontalAlignment="Left" Margin="791,10,0,0" VerticalAlignment="Top" Width="119" Height="24" Click="btnSendCon_Click"/>
-                    <Label x:Name="lblConnectStatus" Content="" HorizontalAlignment="Left" Margin="469,8,0,0" VerticalAlignment="Top"/>
-                </Grid>
-            </GroupBox>
             <GroupBox x:Name="grpRecieveTo" DockPanel.Dock="Top" Header="Recieve From" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="940" Margin="0,0,0,0">
                 <Grid HorizontalAlignment="Left" Height="45" Margin="10,0,-2,0" VerticalAlignment="Top" Width="920">
                     <Label x:Name="lblIpAddressTo1" Content="IP Address" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top"/>
@@ -44,6 +34,17 @@
 
                 </Grid>
             </GroupBox>
+            <GroupBox x:Name="grpSendTo" Header="Send To" DockPanel.Dock="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="940" Margin="0,1,0,0">
+                <Grid HorizontalAlignment="Left" Height="45" Margin="10,0,-2,0" VerticalAlignment="Top" Width="920">
+                    <Label x:Name="lblIpAddressTo" Content="IP Address" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblPortTo" Content="Port Nr" HorizontalAlignment="Left" Margin="287,8,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtIpAddressTo" HorizontalAlignment="Left" Height="23" Margin="81,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="127.0.0.1"/>
+                    <TextBox x:Name="txtPortNrTo" HorizontalAlignment="Left" Height="23" Margin="340,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="13000"/>
+                    <Button x:Name="btnSendCon" Content="Connect" HorizontalAlignment="Left" Margin="791,10,0,0" VerticalAlignment="Top" Width="119" Height="24" Click="btnSendCon_Click"/>
+                    <Label x:Name="lblConnectStatus" Content="" HorizontalAlignment="Left" Margin="469,8,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </GroupBox>
+           
             <Label x:Name="label" Content="Send and Recieve Data : " HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top" DockPanel.Dock="Top"/>
 
             <ListView x:Name="lstViewData" BorderBrush="Black" Margin="0,0,0,0" DockPanel.Dock="Top" Height="265">

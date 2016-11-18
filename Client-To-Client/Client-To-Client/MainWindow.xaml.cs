@@ -69,7 +69,7 @@ namespace Client_To_Client
                 //Updating the statuses and creating error log in case of error
                 gen.creatErrorLog(ex);
                 btnSendCon.Dispatcher.BeginInvoke((Action)(() => btnSendCon.Background = Brushes.Red));
-                lblConnectStatus.Dispatcher.BeginInvoke((Action)(() => lblConnectStatus.Content = "Failed to connect. Check error log."));
+                lblConnectStatus.Dispatcher.BeginInvoke((Action)(() => lblConnectStatus.Content = "Failed to connect.Make sure listening port is open. Check error log."));
                 
             }
         }

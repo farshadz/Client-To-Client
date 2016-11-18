@@ -12,3 +12,4 @@ C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client
 C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client-To-Client.pdb
 C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\bin\Debug\Client-To-Client.pdb
 C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client_To_Client.aboutBox.resources
+C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\obj\Debug\Client-To-Client.csprojResolveAssemblyReference.cache
