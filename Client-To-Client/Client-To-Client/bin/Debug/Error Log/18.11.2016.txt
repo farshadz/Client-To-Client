@@ -1,0 +1,154 @@
+Time: 18.11.2016 10:27:02 
+-----------------------------------------------------------
+Message: No connection could be made because the target machine actively refused it 127.0.0.1:13001
+StackTrace:    at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Client_To_Client.MainWindow.esSenderConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 62
+Source: System
+TargetSite: Void DoConnect(System.Net.EndPoint, System.Net.SocketAddress)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:05:24 
+-----------------------------------------------------------
+Message: No connection could be made because the target machine actively refused it 127.0.0.1:13000
+StackTrace:    at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Client_To_Client.MainWindow.esSenderConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 53
+Source: System
+TargetSite: Void DoConnect(System.Net.EndPoint, System.Net.SocketAddress)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:05:50 
+-----------------------------------------------------------
+Message: An invalid argument was supplied
+StackTrace:    at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 125
+Source: System
+TargetSite: Void DoBind(System.Net.EndPoint, System.Net.SocketAddress)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:24:09 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Net.UnsafeNclNativeMethods.OSSOCK.recv(IntPtr socketHandle, Byte* pinnedBuffer, Int32 len, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, SocketError& errorCode)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 170
+Source: System
+TargetSite: Int32 recv(IntPtr, Byte*, Int32, System.Net.Sockets.SocketFlags)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:24:09 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 186
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 146
+Source: Client-To-Client
+TargetSite: Void ReceiveBytes(System.Net.Sockets.Socket)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:25:31 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Net.UnsafeNclNativeMethods.OSSOCK.recv(IntPtr socketHandle, Byte* pinnedBuffer, Int32 len, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, SocketError& errorCode)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 170
+Source: System
+TargetSite: Int32 recv(IntPtr, Byte*, Int32, System.Net.Sockets.SocketFlags)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:25:35 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 186
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 146
+Source: Client-To-Client
+TargetSite: Void ReceiveBytes(System.Net.Sockets.Socket)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:26:22 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Net.UnsafeNclNativeMethods.OSSOCK.recv(IntPtr socketHandle, Byte* pinnedBuffer, Int32 len, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, SocketError& errorCode)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 170
+Source: System
+TargetSite: Int32 recv(IntPtr, Byte*, Int32, System.Net.Sockets.SocketFlags)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:26:22 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 186
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 146
+Source: Client-To-Client
+TargetSite: Void ReceiveBytes(System.Net.Sockets.Socket)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:28:19 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Net.UnsafeNclNativeMethods.OSSOCK.recv(IntPtr socketHandle, Byte* pinnedBuffer, Int32 len, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, SocketError& errorCode)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 170
+Source: System
+TargetSite: Int32 recv(IntPtr, Byte*, Int32, System.Net.Sockets.SocketFlags)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:28:47 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 186
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 146
+Source: Client-To-Client
+TargetSite: Void ReceiveBytes(System.Net.Sockets.Socket)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:32:39 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Net.UnsafeNclNativeMethods.OSSOCK.recv(IntPtr socketHandle, Byte* pinnedBuffer, Int32 len, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, SocketError& errorCode)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 180
+Source: System
+TargetSite: Int32 recv(IntPtr, Byte*, Int32, System.Net.Sockets.SocketFlags)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:32:40 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 196
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 156
+Source: Client-To-Client
+TargetSite: Void ReceiveBytes(System.Net.Sockets.Socket)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:35:00 
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at Client_To_Client.MainWindow.ReceiveBytes(Socket nSocket) in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 194
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 156
+Source: Client-To-Client
+TargetSite: Void ReceiveBytes(System.Net.Sockets.Socket)
+-----------------------------------------------------------
+
+Time: 18.11.2016 04:40:42 
+-----------------------------------------------------------
+Message: No connection could be made because the target machine actively refused it 127.0.0.1:13000
+StackTrace:    at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Client_To_Client.MainWindow.esSenderConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 54
+Source: System
+TargetSite: Void DoConnect(System.Net.EndPoint, System.Net.SocketAddress)
+-----------------------------------------------------------
+

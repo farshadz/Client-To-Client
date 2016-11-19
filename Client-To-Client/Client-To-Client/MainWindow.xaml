@@ -29,7 +29,7 @@
                     <Label x:Name="lblIpAddressTo_Copy1" Content="Port Nr" HorizontalAlignment="Left" Margin="292,12,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtIpAddressIn" HorizontalAlignment="Left" Height="23" Margin="81,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="127.0.0.1"/>
                     <TextBox x:Name="txtPortNrIn" HorizontalAlignment="Left" Height="23" Margin="340,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="13000"/>
-                    <Button x:Name="btnRecieveCon" Content="Connect" HorizontalAlignment="Left" Margin="789,12,0,0" VerticalAlignment="Top" Width="121" Height="24" Click="btnRecieveCon_Click"/>
+                    <Button x:Name="btnRecieveCon" Content="Connect" HorizontalAlignment="Left" Margin="789,12,0,0" VerticalAlignment="Top" Width="121" Height="24" Click="btnRecieveCon_Click" Background="#FFD7E5F7"/>
                     <Label x:Name="lblRecieverStatus" Content="" HorizontalAlignment="Left" Margin="469,12,0,0" VerticalAlignment="Top"/>
 
                 </Grid>
@@ -40,11 +40,11 @@
                     <Label x:Name="lblPortTo" Content="Port Nr" HorizontalAlignment="Left" Margin="287,8,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtIpAddressTo" HorizontalAlignment="Left" Height="23" Margin="81,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="127.0.0.1"/>
                     <TextBox x:Name="txtPortNrTo" HorizontalAlignment="Left" Height="23" Margin="340,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="13000"/>
-                    <Button x:Name="btnSendCon" Content="Connect" HorizontalAlignment="Left" Margin="791,10,0,0" VerticalAlignment="Top" Width="119" Height="24" Click="btnSendCon_Click"/>
+                    <Button x:Name="btnSendCon" Content="Connect" HorizontalAlignment="Left" Margin="791,10,0,0" VerticalAlignment="Top" Width="119" Height="24" Click="btnSendCon_Click" Background="#FFD7E5F7"/>
                     <Label x:Name="lblConnectStatus" Content="" HorizontalAlignment="Left" Margin="469,8,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </GroupBox>
-           
+
             <Label x:Name="label" Content="Send and Recieve Data : " HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top" DockPanel.Dock="Top"/>
 
             <ListView x:Name="lstViewData" BorderBrush="Black" Margin="0,0,0,0" DockPanel.Dock="Top" Height="265">

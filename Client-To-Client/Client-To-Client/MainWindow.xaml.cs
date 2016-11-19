@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Client_To_Client
 {
@@ -27,6 +18,7 @@ namespace Client_To_Client
         Socket socketSender = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         Socket socketReciever = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         General gen = new General();
+        Thread thrRecieve;
         public MainWindow()
         {
             InitializeComponent();
@@ -60,6 +52,7 @@ namespace Client_To_Client
                 //establishing connection
                 var ipAddress = new IPEndPoint(IPAddress.Parse(ipAdd), portNr);
                 socketSender.Connect(ipAddress);
+
                 //Updating the statuses
                 lblConnectStatus.Dispatcher.BeginInvoke((Action)(() => lblConnectStatus.Content = "Connection Established"));
                 btnSendCon.Dispatcher.BeginInvoke((Action)(() => btnSendCon.Background = Brushes.Green ));
@@ -79,36 +72,75 @@ namespace Client_To_Client
         {
             try
             {
-                //Converting to text into bytes
-                var sendData = Encoding.ASCII.GetBytes(txtMessageToSend.Text);
-                //Sending data
-                socketSender.Send(sendData, sendData.Length, SocketFlags.None);
+                if (SocketConnected(txtIpAddressTo.Text, Convert.ToInt16(txtPortNrTo.Text)))
+                {
+                    //Converting to text into bytes
+                    var sendData = Encoding.ASCII.GetBytes(txtMessageToSend.Text);
+                    //Sending data
+                    socketSender.Send(sendData, sendData.Length, SocketFlags.None);
+                    IPEndPoint remoteIpEndPoint = socketSender.RemoteEndPoint as IPEndPoint;
+                    lstViewData.Dispatcher.BeginInvoke((Action)(() => lstViewData.Items.Add(new lstItem { Sender = getHostName(remoteIpEndPoint.Address.ToString()), Message = txtMessageToSend.Text })));
+
+                }
+                else
+                {
+                    btnSendCon.Dispatcher.BeginInvoke((Action)(() => btnSendCon.Background = Brushes.Red));
+                    lblConnectStatus.Dispatcher.BeginInvoke((Action)(() => lblConnectStatus.Content = "Failed to send data. Target machine not responding"));
+                }
+
+               
             }
             catch (Exception ex)
             {
                 gen.creatErrorLog(ex);
                 btnSendCon.Dispatcher.BeginInvoke((Action)(() => btnSendCon.Background = Brushes.Red));
                 lblConnectStatus.Dispatcher.BeginInvoke((Action)(() => lblConnectStatus.Content = "Failed to send data. Check error log."));
+
             }
         
         }
-
-        private bool SocketConnected(Socket s)
+      
+        private bool SocketConnected(String ip, int port)
         {
-            bool part1 = s.Poll(1000, SelectMode.SelectRead);
-            bool part2 = (s.Available == 0);
-            if (part1 && part2)
-                return false;
-            else
+            TcpClient tc = new TcpClient();
+            try
+            { 
+                tc.Connect(ip,port);
+                tc.Close();
                 return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            //bool part1 = s.Poll(1000, SelectMode.SelectRead);
+            //bool part2 = (s.Available == 0);
+            //if (part1 && part2)
+            //    return false;
+            //else
+            //    return true;
         }
 
         //Establishing recieve connection in thread
         private void btnRecieveCon_Click(object sender, RoutedEventArgs e)
         {
            
-            Thread thrRecieve = new Thread(() => esRecieverConnection());
-            thrRecieve.Start();
+            
+            if (btnRecieveCon.Content.ToString() == "Disconnect")
+            {
+                disposeConnection(socketReciever);
+                btnRecieveCon.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFD7E5F7"));
+                thrRecieve.Abort();
+                lblRecieverStatus.Dispatcher.BeginInvoke((Action)(() => lblRecieverStatus.Content = "Listener is not active"));
+                btnRecieveCon.Content = "Connect";
+            }else
+            {
+                 thrRecieve = new Thread(() => esRecieverConnection());
+                 btnRecieveCon.Content = "Disconnect";
+                 thrRecieve.Start();
+            }
+                
         }
         private void esRecieverConnection()
         {
@@ -145,6 +177,10 @@ namespace Client_To_Client
 
 
             }
+            catch (ThreadAbortException)
+            {
+                lblRecieverStatus.Dispatcher.BeginInvoke((Action)(() => lblRecieverStatus.Content = "Recieving port has been disposed"));
+            }
             catch (Exception ex)
             {
                 gen.creatErrorLog(ex);
@@ -168,11 +204,16 @@ namespace Client_To_Client
                     //Converting bytes into string
                     String dataRecieved = Encoding.ASCII.GetString(receiveBuffer, 0, receivedBytes);
 
+                    IPEndPoint remoteIpEndPoint = nSocket.RemoteEndPoint as IPEndPoint;
                     //Show the details of sender and messages into data
-                    lstViewData.Dispatcher.BeginInvoke((Action)(() => lstViewData.Items.Add(new lstItem{Sender =nSocket.RemoteEndPoint.ToString(), Message = dataRecieved})));
+                    lstViewData.Dispatcher.BeginInvoke((Action)(() => lstViewData.Items.Add(new lstItem{Sender =getHostName(remoteIpEndPoint.Address.ToString()), Message = dataRecieved})));
 
                 }
 
+            }
+            catch (ThreadAbortException)
+            {
+                lblRecieverStatus.Dispatcher.BeginInvoke((Action)(() => lblRecieverStatus.Content = "Recieving port has been disposed"));
             }
             catch (Exception ex)
             {
@@ -195,6 +236,34 @@ namespace Client_To_Client
         {
             aboutBox abt = new aboutBox();
             abt.ShowDialog();
+        }
+        private void disposeConnection(Socket sck)
+        {
+            try
+            {
+                sck.Close();
+                sck.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                gen.creatErrorLog(ex);
+                
+            }
+        }
+        private string getHostName (string ipAddress)
+        {
+            try
+            {
+                IPHostEntry hostEntry = Dns.GetHostEntry(ipAddress);
+                return hostEntry.HostName;
+            }
+            catch (Exception )
+            {
+
+                return "Unknown";
+            }
+            
         }
     }
 }
