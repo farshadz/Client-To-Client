@@ -25,7 +25,7 @@ namespace Client_To_Client
         }
 
         //List items to be added into the list view
-        public class lstItem
+        private class lstItem
         {
             public string Sender { get; set; }
 
