@@ -17,8 +17,13 @@ namespace Client_To_Client
         //Declaring socket connections 
         Socket socketSender = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         Socket socketReciever = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+        //Creating object of class General which public function are defined in
         General gen = new General();
+
+        //creating a thread object for recieving the information
         Thread thrRecieve;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -237,6 +242,7 @@ namespace Client_To_Client
             aboutBox abt = new aboutBox();
             abt.ShowDialog();
         }
+        //Disposing the socket connection
         private void disposeConnection(Socket sck)
         {
             try
@@ -251,6 +257,8 @@ namespace Client_To_Client
                 
             }
         }
+
+        //Get HostName of the input IP Address
         private string getHostName (string ipAddress)
         {
             try
