@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Client_To_Client"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Client" Height="690.972" Width="968">
+        Title="Client" Height="690.972" Width="968" Closing="frmMain_Closing">
 
 
     <Grid HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="958" >

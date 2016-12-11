@@ -1,0 +1,126 @@
+Time: 11.12.2016 07:47:02 
+-----------------------------------------------------------
+Message: A connect request was made on an already connected socket 127.0.0.1:13000
+StackTrace:    at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Client_To_Client.MainWindow.esSenderConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 59
+Source: System
+TargetSite: Void DoConnect(System.Net.EndPoint, System.Net.SocketAddress)
+-----------------------------------------------------------
+
+Time: 11.12.2016 07:47:04 
+-----------------------------------------------------------
+Message: Once the socket has been disconnected, you can only reconnect again asynchronously, and only to a different EndPoint.  BeginConnect must be called on a thread that won't exit until the operation has been completed.
+StackTrace:    at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Client_To_Client.MainWindow.esSenderConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 59
+Source: System
+TargetSite: Void Connect(System.Net.EndPoint)
+-----------------------------------------------------------
+
+Time: 11.12.2016 07:47:06 
+-----------------------------------------------------------
+Message: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+StackTrace:    at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 165
+Source: System
+TargetSite: Void Bind(System.Net.EndPoint)
+-----------------------------------------------------------
+
+Time: 11.12.2016 07:47:07 
+-----------------------------------------------------------
+Message: Once the socket has been disconnected, you can only reconnect again asynchronously, and only to a different EndPoint.  BeginConnect must be called on a thread that won't exit until the operation has been completed.
+StackTrace:    at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Client_To_Client.MainWindow.esSenderConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 59
+Source: System
+TargetSite: Void Connect(System.Net.EndPoint)
+-----------------------------------------------------------
+
+Time: 11.12.2016 07:47:08 
+-----------------------------------------------------------
+Message: Once the socket has been disconnected, you can only reconnect again asynchronously, and only to a different EndPoint.  BeginConnect must be called on a thread that won't exit until the operation has been completed.
+StackTrace:    at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Client_To_Client.MainWindow.esSenderConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 59
+Source: System
+TargetSite: Void Connect(System.Net.EndPoint)
+-----------------------------------------------------------
+
+Time: 11.12.2016 07:47:09 
+-----------------------------------------------------------
+Message: Once the socket has been disconnected, you can only reconnect again asynchronously, and only to a different EndPoint.  BeginConnect must be called on a thread that won't exit until the operation has been completed.
+StackTrace:    at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Client_To_Client.MainWindow.esSenderConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 59
+Source: System
+TargetSite: Void Connect(System.Net.EndPoint)
+-----------------------------------------------------------
+
+Time: 11.12.2016 08:01:25 
+-----------------------------------------------------------
+Message: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+StackTrace:    at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 177
+Source: System
+TargetSite: Void Bind(System.Net.EndPoint)
+-----------------------------------------------------------
+
+Time: 11.12.2016 08:02:21 
+-----------------------------------------------------------
+Message: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+StackTrace:    at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 177
+Source: System
+TargetSite: Void Bind(System.Net.EndPoint)
+-----------------------------------------------------------
+
+Time: 11.12.2016 08:02:49 
+-----------------------------------------------------------
+Message: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+StackTrace:    at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Client_To_Client.MainWindow.esRecieverConnection() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 177
+Source: System
+TargetSite: Void Bind(System.Net.EndPoint)
+-----------------------------------------------------------
+
+Time: 11.12.2016 08:04:54 
+-----------------------------------------------------------
+Message: An existing connection was forcibly closed by the remote host
+StackTrace:    at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   at Client_To_Client.MainWindow.sendData() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 98
+Source: System
+TargetSite: Int32 Send(Byte[], Int32, Int32, System.Net.Sockets.SocketFlags)
+-----------------------------------------------------------
+
+Time: 11.12.2016 08:05:00 
+-----------------------------------------------------------
+Message: An existing connection was forcibly closed by the remote host
+StackTrace:    at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   at Client_To_Client.MainWindow.sendData() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 98
+Source: System
+TargetSite: Int32 Send(Byte[], Int32, Int32, System.Net.Sockets.SocketFlags)
+-----------------------------------------------------------
+
+Time: 11.12.2016 08:11:35 
+-----------------------------------------------------------
+Message: An existing connection was forcibly closed by the remote host
+StackTrace:    at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   at Client_To_Client.MainWindow.sendData() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 98
+Source: System
+TargetSite: Int32 Send(Byte[], Int32, Int32, System.Net.Sockets.SocketFlags)
+-----------------------------------------------------------
+
+Time: 11.12.2016 08:11:37 
+-----------------------------------------------------------
+Message: An existing connection was forcibly closed by the remote host
+StackTrace:    at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 size, SocketFlags socketFlags)
+   at Client_To_Client.MainWindow.sendData() in C:\Users\Farshad-PC\Documents\Client-To-Client\Client-To-Client\Client-To-Client\MainWindow.xaml.cs:line 98
+Source: System
+TargetSite: Int32 Send(Byte[], Int32, Int32, System.Net.Sockets.SocketFlags)
+-----------------------------------------------------------
+

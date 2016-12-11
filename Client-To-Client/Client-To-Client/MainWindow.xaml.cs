@@ -15,15 +15,15 @@ namespace Client_To_Client
     public partial class MainWindow : Window
     {
         //Declaring socket connections 
-        Socket socketSender = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        Socket socketReciever = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        Socket socketSender;
+        Socket socketReciever;
 
         //Creating object of class General which public function are defined in
         General gen = new General();
 
         //creating a thread object for recieving the information
         Thread thrRecieve;
-
+        Thread thrSend;
         public MainWindow()
         {
             InitializeComponent();
@@ -40,8 +40,21 @@ namespace Client_To_Client
         //Start up of the sender connection within a thread
         private void btnSendCon_Click(object sender, RoutedEventArgs e)
         {
-            Thread thrSend = new Thread(() => esSenderConnection());
-            thrSend.Start();
+            if (btnSendCon.Content.ToString() == "Disconnect")
+            {
+                disposeConnection(socketSender);
+                btnSendCon.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFD7E5F7"));
+                thrSend.Abort();
+                lblConnectStatus.Dispatcher.BeginInvoke((Action)(() => lblConnectStatus.Content = "Not Connected"));
+                btnSendCon.Content = "Connect";
+            }
+            else
+            {
+                thrSend = new Thread(() => esSenderConnection());
+                socketSender = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                btnSendCon.Content = "Disconnect";
+                thrSend.Start();
+            }
         }
         private void esSenderConnection()
         {
@@ -85,7 +98,7 @@ namespace Client_To_Client
                     socketSender.Send(sendData, sendData.Length, SocketFlags.None);
                     IPEndPoint remoteIpEndPoint = socketSender.RemoteEndPoint as IPEndPoint;
                     lstViewData.Dispatcher.BeginInvoke((Action)(() => lstViewData.Items.Add(new lstItem { Sender = getHostName(remoteIpEndPoint.Address.ToString()), Message = txtMessageToSend.Text })));
-
+                    txtMessageToSend.Dispatcher.BeginInvoke((Action)(() => txtMessageToSend.Text = ""));
                 }
                 else
                 {
@@ -142,11 +155,13 @@ namespace Client_To_Client
             }else
             {
                  thrRecieve = new Thread(() => esRecieverConnection());
-                 btnRecieveCon.Content = "Disconnect";
+                socketReciever  = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); 
+                btnRecieveCon.Content = "Disconnect";
                  thrRecieve.Start();
             }
                 
         }
+
         private void esRecieverConnection()
         {
             try
@@ -199,7 +214,10 @@ namespace Client_To_Client
 
             try
             {
-                while (true)
+              
+
+                IPEndPoint remotAdd = nSocket.RemoteEndPoint as IPEndPoint;
+                while (SocketConnected (remotAdd.Address.ToString(), remotAdd.Port))
                 {
                     //Declaring array of bytes as the destination of recieved data
                     var receiveBuffer = new byte[10000];
@@ -272,6 +290,15 @@ namespace Client_To_Client
                 return "Unknown";
             }
             
+        }
+
+        //Disposing sockets and threads
+        private void frmMain_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            disposeConnection(socketSender);
+            disposeConnection(socketReciever);
+            thrRecieve.Abort();
+            thrRecieve.Abort();
         }
     }
 }
